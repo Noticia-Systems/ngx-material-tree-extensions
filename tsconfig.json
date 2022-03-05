@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-material-tree-extensions": [
+        "dist/ngx-material-tree-extensions/ngx-material-tree-extensions",
+        "dist/ngx-material-tree-extensions"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

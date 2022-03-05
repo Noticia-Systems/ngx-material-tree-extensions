@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-material-tree-extensions": {
+      "projectType": "library",
+      "root": "projects/ngx-material-tree-extensions",
+      "sourceRoot": "projects/ngx-material-tree-extensions/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-material-tree-extensions/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-material-tree-extensions/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-material-tree-extensions/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-material-tree-extensions/src/test.ts",
+            "tsConfig": "projects/ngx-material-tree-extensions/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-material-tree-extensions/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-material-tree-extensions"
 }

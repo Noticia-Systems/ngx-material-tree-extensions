@@ -1,27 +1,60 @@
-# NgxMaterialTreeExtensions
+[![Node.js Package](https://github.com/Noticia-Systems/ngx-material-tree-extensions/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/Noticia-Systems/ngx-material-tree-extensions/actions/workflows/npm-publish.yml) [![Node.js CI](https://github.com/Noticia-Systems/ngx-material-tree-extensions/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/Noticia-Systems/ngx-material-tree-extensions/actions/workflows/node.js.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+ngx-material-tree-extensions adds a service wrapper for Material trees and provides several useful extension methods for
+manipulating the trees.
 
-## Development server
+This package is used for flat Material trees, as they are generally more simple to work with and provide additional
+information (like the current level).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+``npm install @noticia-systems/ngx-material-tree-extensions``
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+Define an interface representing a single node that shall be displayed in your tree:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```typescript
+export interface DemoNode extends ITreeNode<DemoNode> {
+  name: string;
+}
+```
 
-## Running unit tests
+Your node has to extend ```ITreeNode<TTreeNode>```!
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In your component displaying the tree inject the ```TreeNodeService<TTreeNode>```:
 
-## Running end-to-end tests
+```typescript
+constructor(public treeNodeService: TreeNodeService<DemoNode>)
+{
+}
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+You can set the initial data of the tree by setting the data property:
 
-## Further help
+```typescript
+treeNodeService.data = demoNodes;
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Where ```demoNodes``` is an array of ``DemoNode``.
+
+For simplicity an observable of the data is available:
+
+```typescript
+treeNodeService.data$
+```
+
+Within the template of your component, the following allows for correct use of the ``TreeNodeService<TTreeNode>``:
+
+```angular2html
+
+<mat-tree [dataSource]="treeNodeService.dataSource" [treeControl]="treeNodeService.treeControl">
+  <mat-tree-node *matTreeNodeDef="let flatNode">
+    ...
+  </mat-tree-node>
+</mat-tree>
+```
+
+``flatNode.node`` allows accessing the underlying ``DemoNode``. ``flatNode.level`` and ``flatNode.expandable`` indicate the current depth of the tree node and the existence of children on the node respectively.
+
+``TreeNodeService<TTreeNode>`` provides several methods for manipulating and retrieving information about the tree. Please refer to the wiki for more documentation about these methods.
