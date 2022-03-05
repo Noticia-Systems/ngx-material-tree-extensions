@@ -21,13 +21,16 @@
     "url": "https://github.com/Noticia-Systems/ngx-material-tree-extensions/issues"
   },
   "peerDependencies": {
+    "@angular/cdk": "^13.2.5",
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0",
     "@angular/material": "^13.1.0",
-    "@types/lodash-es": "^4.17.6",
     "lodash-es": "^4.17.21"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.6"
   }
 }
