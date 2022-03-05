@@ -57,4 +57,4 @@ Within the template of your component, the following allows for correct use of t
 
 ``flatNode.node`` allows accessing the underlying ``DemoNode``. ``flatNode.level`` and ``flatNode.expandable`` indicate the current depth of the tree node and the existence of children on the node respectively.
 
-``TreeNodeService<TTreeNode>`` provides several methods for manipulating and retrieving information about the tree. Please refer to the wiki for more documentation about these methods.
+``TreeNodeService<TTreeNode>`` provides several methods for manipulating and retrieving information about the tree. Please refer to the [wiki](https://github.com/Noticia-Systems/ngx-material-tree-extensions/wiki) for more documentation about these methods.
