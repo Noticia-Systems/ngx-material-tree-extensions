@@ -1,6 +1,6 @@
 {
   "name": "@noticia-systems/ngx-material-tree-extensions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "Noticia Systems <info@noticia.systems> (https://noticia.systems)",
   "description": "Angular Material Tree Extensions",
@@ -22,9 +22,9 @@
   },
   "peerDependencies": {
     "@angular/cdk": "^13.2.5",
-    "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0",
-    "@angular/material": "^13.1.0",
+    "@angular/common": "^13.2.5",
+    "@angular/core": "^13.2.5",
+    "@angular/material": "^13.2.5",
     "lodash-es": "^4.17.21",
     "rxjs": "~7.5.4"
   },
