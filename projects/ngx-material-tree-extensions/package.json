@@ -25,7 +25,8 @@
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0",
     "@angular/material": "^13.1.0",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "rxjs": "~7.5.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"

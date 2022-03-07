@@ -119,6 +119,15 @@ export class TreeNodeService<TTreeNode extends ITreeNode<TTreeNode>> {
   // #region Methods
 
   /**
+   * Retrieves the {@link TreeFlatNode} for a given {@link TTreeNode}.
+   * @param node {@link TTreeNode} to retrieve {@link TreeFlatNode} for.
+   * @returns {@link TreeFlatNode} or undefined.
+   */
+  getFlatNode(node: TTreeNode): TreeFlatNode<TTreeNode> | undefined {
+    return this.nodeMap.get(node);
+  }
+
+  /**
    * Inserts a node as a child node.
    * @param parentNode Parent node.
    * @param node Node to insert.
