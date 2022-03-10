@@ -383,7 +383,7 @@ export class TreeNodeService<TTreeNode extends ITreeNode<TTreeNode>> {
         if (n === flatNode || nodePath?.includes(n.node)) {
           this.treeControl.expand(n);
         } else {
-          if (n.level > 0) this.treeControl.collapse(n);
+          this.treeControl.collapse(n);
         }
       }
     }
