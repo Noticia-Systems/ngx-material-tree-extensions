@@ -278,7 +278,7 @@ export class TreeNodeService<TTreeNode extends ITreeNode<TTreeNode>> {
   cloneAsChild(originalNode: TTreeNode, parentNode: TTreeNode): TTreeNode {
     const clonedNode = cloneDeep(originalNode);
 
-    this.insertChild(parentNode, cloneDeep(originalNode));
+    this.insertChild(parentNode, clonedNode);
 
     return clonedNode;
   }
