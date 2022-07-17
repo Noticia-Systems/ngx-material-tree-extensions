@@ -1,6 +1,6 @@
 {
   "name": "@noticia-systems/ngx-material-tree-extensions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "author": "Noticia Systems <info@noticia.systems> (https://noticia.systems)",
   "description": "Angular Material Tree Extensions",
@@ -21,15 +21,15 @@
     "url": "https://github.com/Noticia-Systems/ngx-material-tree-extensions/issues"
   },
   "peerDependencies": {
-    "@angular/cdk": "^13.2.5",
-    "@angular/common": "^13.2.5",
-    "@angular/core": "^13.2.5",
-    "@angular/material": "^13.2.5",
+    "@angular/cdk": "^14.0.5",
+    "@angular/common": "~14.0.6",
+    "@angular/core": "~14.0.6",
+    "@angular/material": "^14.0.5",
     "lodash-es": "^4.17.21",
-    "rxjs": "~7.5.4"
+    "rxjs": "~7.5.6"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6"
